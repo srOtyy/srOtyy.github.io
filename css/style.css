@@ -482,8 +482,8 @@ body {
 .container__buscador .buscador__main .main__div .galery {
   width: 80vw;
   margin: auto;
+  padding: 10px 5px;
   /*Casas*/
-  /* inversionistas */
 }
 .container__buscador .buscador__main .main__div .galery .galery__casas {
   width: 90vw;
@@ -495,21 +495,21 @@ body {
   padding: 15px;
 }
 .container__buscador .buscador__main .main__div .galery .galery__casas .article {
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 290px;
-  height: 300px;
+  width: 300px;
+  height: 360px;
   border: 2px solid #135D66;
   border-top: none;
   border-radius: 10px;
 }
 .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure { /* en este elemento van los hover de la animacion*/
   position: relative;
-  width: 290px;
-  height: 300px;
+  width: 300px;
+  height: 360px;
   overflow: hidden;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -580,49 +580,6 @@ body {
 }
 .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info .info-precio {
   visibility: hidden;
-}
-.container__buscador .buscador__main .main__div .galery .galery__inversion {
-  display: flex;
-  flex-flow: column wrap;
-  gap: 40px;
-  padding: 25px 5px;
-  width: 750px;
-}
-.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion {
-  display: flex;
-  width: 750px;
-  height: 370px;
-  justify-content: start;
-}
-.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .article__info-inversion {
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 20px;
-  font-size: 1em;
-  width: 150px;
-  background-color: #77B0AA;
-  border: 2px solid #135D66;
-  border-right: none;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .article__info-inversion .precio {
-  background-color: #E3FEF7;
-  margin-top: 9vh;
-  width: 10vw;
-  border-radius: 40px;
-  box-shadow: 0 5px 10px #003C43;
-}
-.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .figure-inversion {
-  width: 100px;
-}
-.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .figure-inversion .imagen {
-  width: auto;
-  height: 370px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
 /*  Media Querys  */
