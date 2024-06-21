@@ -1,0 +1,91 @@
+@import "colores";
+@mixin funcion($nombre){
+    animation: $nombre both;
+    animation-timeline: scroll();
+    animation-range:10px 350px;
+}
+/* -----------------INICIO Header----------------- */
+
+
+$color-texto: black;
+
+.header{
+    .header__nav {
+        position: fixed;
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(2px);
+        top: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 30px 20px;
+        font-family: helvetica;
+        @include funcion(header-animation);
+        .nav__logo {
+            color: $color-texto;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 0 20px 15px;
+            @include funcion(header-animation-logo);
+    
+        }
+        .nav__list {
+            display: flex;
+            gap: 40px;
+            padding: 10px;
+            font-size: 18px;
+            .link {
+                color: $color-texto;
+                font-weight: 600;
+                text-decoration: none;
+                font-size: inherit;
+                @include funcion(header-animation-links);
+            }
+        }     
+    }
+}
+
+/* animaciones */
+@keyframes header-animation{
+    0%{
+        padding: 25px 5px;
+    }
+    100%{
+        height: 75px;
+        padding: 15px 20px;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.896);
+    }
+}
+@keyframes header-animation-links{
+    from{
+        color: black;
+
+    }
+    to{
+        color: $color-oscuro0;
+        
+    }
+}
+@keyframes header-animation-logo{
+    from{
+        color: black;
+        font-size: 1.7em;
+  
+    }
+    to{
+        color: $color-oscuro0;
+        font-size: 1.6em;
+        padding-top: 5px;
+    }
+}
+
+
+/* -----------------Fin Header----------------- */
+
+
+
+

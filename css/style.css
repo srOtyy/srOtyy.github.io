@@ -1,0 +1,960 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  background-color: rgb(230, 225, 225);
+}
+
+/* -----------------INICIO Header----------------- */
+.header .header__nav {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  top: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 30px 20px;
+  font-family: helvetica;
+  animation: header-animation both;
+  animation-timeline: scroll();
+  animation-range: 10px 350px;
+}
+.header .header__nav .nav__logo {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 0 20px 15px;
+  animation: header-animation-logo both;
+  animation-timeline: scroll();
+  animation-range: 10px 350px;
+}
+.header .header__nav .nav__list {
+  display: flex;
+  gap: 40px;
+  padding: 10px;
+  font-size: 18px;
+}
+.header .header__nav .nav__list .link {
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: inherit;
+  animation: header-animation-links both;
+  animation-timeline: scroll();
+  animation-range: 10px 350px;
+}
+
+/* animaciones */
+@keyframes header-animation {
+  0% {
+    padding: 25px 5px;
+  }
+  100% {
+    height: 75px;
+    padding: 15px 20px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.896);
+  }
+}
+@keyframes header-animation-links {
+  from {
+    color: black;
+  }
+  to {
+    color: #135D66;
+  }
+}
+@keyframes header-animation-logo {
+  from {
+    color: black;
+    font-size: 1.7em;
+  }
+  to {
+    color: #135D66;
+    font-size: 1.6em;
+    padding-top: 5px;
+  }
+}
+/* -----------------Fin Header----------------- */
+/* -----------------INICIO Main (index) ----------------- */
+/*  Main ( container ) */
+.container__main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* background  + panel de busqueda*/
+  /* contenido del Main + galeria */
+}
+.container__main .main__background {
+  position: relative;
+  top: 0;
+  background-image: url(imagenes/fondo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  opacity: 0.9;
+  height: 70vh;
+  width: 100%;
+  /* panel de busqueda */
+}
+.container__main .main__background .bg__panel {
+  position: relative;
+  top: 180px;
+  margin: auto;
+  padding: 10px;
+  backdrop-filter: blur(2px);
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.container__main .main__background .bg__panel .div__panel {
+  margin: auto;
+  padding: 45px 10px;
+  width: 800px;
+}
+.container__main .main__background .bg__panel .div__panel .panel__select {
+  margin: -3px;
+  border: none;
+  height: 40px;
+  width: 200px;
+  transition: all 500ms ease-out;
+}
+.container__main .main__background .bg__panel .div__panel .panel__button {
+  padding: 12px 50px;
+  color: white;
+  text-decoration: none;
+  background-color: #003C43;
+  transition: all 500ms ease-out;
+}
+.container__main .main__section {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+  /*galeria*/
+}
+.container__main .main__section h1 {
+  text-align: center;
+  font-size: inherit;
+  font-weight: 600;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.9;
+  color: #135D66;
+  padding: 30px;
+}
+.container__main .main__section .section__galery {
+  width: 90vw;
+  margin: auto;
+  padding-bottom: 60px;
+}
+.container__main .main__section .section__galery h2 {
+  text-align: center;
+  font-size: 1.29rem;
+  padding: 30px;
+  border-bottom: 1px solid #999;
+}
+.container__main .main__section .section__galery .galery__articles {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 50px;
+}
+.container__main .main__section .section__galery .galery__articles .article {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 360px;
+  width: 330px;
+  border: 2px solid #135D66;
+  border-top: none;
+  border-radius: 10px;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure { /* en este elemento van los hover de la animacion*/
+  position: relative;
+  height: 330px;
+  width: 330px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  /*Animaciones de los articulos*/
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure .imagen {
+  width: 100%;
+  height: 100%;
+  transition: all 500ms ease-out;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure .figure__capa {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.4);
+  transition: all 500ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure .figure__capa h2 {
+  color: white;
+  margin-top: 200px;
+  font-weight: 500;
+  font-size: 1.7em;
+  margin-top: 220px;
+  transition: all 500ms ease-out;
+  border: none;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure:hover > .figure__capa {
+  opacity: 1;
+  visibility: visible;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure:hover > .figure__capa h2 {
+  margin-top: 90px;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__figure:hover > .imagen {
+  transform: scale(1.2);
+}
+.container__main .main__section .section__galery .galery__articles .article .article__info {
+  align-items: center;
+  padding-top: 15px;
+  color: rgba(0, 0, 0, 0.853);
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 10px;
+  text-align: start;
+  text-indent: 10px;
+  line-height: 1.3;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__info .info-inicio {
+  padding-top: 2px;
+  font-weight: 100;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__info .info-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: 5px;
+  padding-top: 20px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+.container__main .main__section .section__galery .galery__articles .article .article__info .info-precio {
+  visibility: hidden;
+}
+
+/* -----------------FIN Main index----------------- */
+/* -----------------INICIO Footer----------------- */
+.footer {
+  background-color: #111;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+.footer .us {
+  font-size: inherit;
+  width: 60vw;
+  color: gray;
+  text-align: start;
+  padding: 0;
+  margin: 0;
+  padding-top: 30px;
+  line-height: 2rem;
+}
+.footer .info {
+  font-size: inherit;
+  padding-top: 30px;
+  padding-right: 50px;
+  line-height: 1.5rem;
+  text-wrap: pretty;
+  width: 40vw;
+  color: gray;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* -----------------FIN Footer----------------- */
+/* -----------------INICIO contacto----------------- */
+.container__contacto {
+  height: auto;
+  background-color: white;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.container__contacto .contacto__bg {
+  margin-top: 90px;
+  background-image: url(imagenes/fondo_contacto.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 260px;
+  width: 90vw;
+}
+.container__contacto .contacto__main {
+  display: flex;
+  background-color: white;
+  padding: 90px 20px;
+  height: 550px;
+  width: 90vw;
+}
+.container__contacto .contacto__main .image {
+  width: 40vw;
+  height: 350px;
+  border-radius: 2000px;
+  border: 1px solid black;
+  background-image: url(imagenes/gato_grande.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container__contacto .contacto__main .main__div {
+  width: 60vw;
+  height: 350px;
+}
+.container__contacto .contacto__main .main__div h2 {
+  padding-left: 25vw;
+  color: #222;
+}
+.container__contacto .contacto__main .main__div .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  gap: 15px;
+}
+.container__contacto .contacto__main .main__div .form .input {
+  margin: auto;
+  margin-right: 10px;
+  height: 30px;
+  width: 55%;
+}
+.container__contacto .contacto__main .main__div .form .input-msg {
+  height: 100px;
+}
+.container__contacto .contacto__main .main__div .form .input-sumbit {
+  width: 30%;
+}
+
+/* -----------------FIN contacto----------------- */
+.container__buscador {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding-bottom: 80px;
+  padding-top: 120px;
+  /* Panel de filtros de busqueda*/
+  /*Main*/
+}
+.container__buscador .nav-toggle {
+  display: none;
+}
+.container__buscador .nav-toggle-label {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.container__buscador .nav-toggle-label i {
+  display: none;
+  color: #003C43;
+  font-size: 24px;
+}
+.container__buscador .buscador__nav {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+  width: 220px;
+  height: 750px;
+  margin: 80px 10px 0 10px;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid #135D66;
+  position: sticky;
+  top: -220px;
+}
+.container__buscador .buscador__nav .nav__titulo {
+  color: black;
+  font-weight: 500;
+  text-align: center;
+  margin: 20px 0 5px 0;
+}
+.container__buscador .buscador__nav .nav__div {
+  padding-top: 5px;
+  width: 80%;
+  border-top: 1px solid #135D66;
+  margin-left: 10%;
+}
+.container__buscador .buscador__nav .nav__div .div__opcion {
+  display: flex;
+  flex-direction: row;
+  font-size: 1em;
+  margin-left: 30px;
+  gap: 5px;
+  padding: 5px;
+}
+.container__buscador .buscador__nav .nav__div .select {
+  height: 35px;
+  width: 100%;
+  margin-top: 10px;
+}
+.container__buscador .buscador__nav .nav__div-precio {
+  padding-top: 10px;
+}
+.container__buscador .buscador__nav .nav__div-precio .opcion-number {
+  margin: auto;
+}
+.container__buscador .buscador__nav .nav__div-precio .opcion-number input {
+  width: 120px;
+}
+.container__buscador .buscador__nav .nav__div-precio .opcion-number label {
+  margin-right: 3px;
+}
+.container__buscador .buscador__nav .div-buttom {
+  margin: auto;
+}
+.container__buscador .buscador__nav .div-buttom .buttom {
+  text-decoration: none;
+  color: #003C43;
+  font-weight: 700;
+  font-size: 1.3em;
+  border: 1px solid gray;
+  padding: 15px 22px;
+  border-radius: 10px;
+  background-color: #E3FEF7;
+}
+.container__buscador .buscador__main {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #888;
+  width: 80%;
+  margin: auto;
+}
+.container__buscador .buscador__main .main__div {
+  width: 80vw;
+  height: auto;
+  margin-left: 5px;
+}
+.container__buscador .buscador__main .main__div h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 30px;
+  border-bottom: 1px solid #999;
+  margin-top: 30px;
+}
+.container__buscador .buscador__main .main__div .galery {
+  width: 80vw;
+  margin: auto;
+  /*Casas*/
+  /* inversionistas */
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas {
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  gap: 40px;
+  padding: 15px;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 290px;
+  height: 300px;
+  border: 2px solid #135D66;
+  border-top: none;
+  border-radius: 10px;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure { /* en este elemento van los hover de la animacion*/
+  position: relative;
+  width: 290px;
+  height: 300px;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure:hover > .figure__capa {
+  opacity: 1;
+  visibility: visible;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure:hover > .figure__capa h2 {
+  margin-top: 40px;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure:hover > .imagen {
+  transform: scale(1.2);
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure .imagen {
+  width: 100%;
+  height: 100%;
+  transition: all 500ms ease-out;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure .figure__capa {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.4);
+  transition: all 500ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure .figure__capa h2 {
+  color: white;
+  margin-top: 200px;
+  font-weight: 500;
+  font-size: 1.7em;
+  margin-top: 220px;
+  transition: all 500ms ease-out;
+  border: none;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info {
+  align-items: center;
+  padding-top: 15px;
+  color: rgba(0, 0, 0, 0.853);
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  text-align: start;
+  text-indent: 10px;
+  line-height: 1.3;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info .info-inicio {
+  padding: 0;
+  padding-top: 5px;
+  font-weight: 100;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info .info-flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  gap: 9px;
+  padding-top: 10px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+.container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info .info-precio {
+  visibility: hidden;
+}
+.container__buscador .buscador__main .main__div .galery .galery__inversion {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 40px;
+  padding: 25px 5px;
+  width: 750px;
+}
+.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion {
+  display: flex;
+  width: 750px;
+  height: 370px;
+  justify-content: start;
+}
+.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .article__info-inversion {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  font-size: 1em;
+  width: 150px;
+  background-color: #77B0AA;
+  border: 2px solid #135D66;
+  border-right: none;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .article__info-inversion .precio {
+  background-color: #E3FEF7;
+  margin-top: 9vh;
+  width: 10vw;
+  border-radius: 40px;
+  box-shadow: 0 5px 10px #003C43;
+}
+.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .figure-inversion {
+  width: 100px;
+}
+.container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .figure-inversion .imagen {
+  width: auto;
+  height: 370px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/*  Media Querys  */
+@media screen and (max-width: 999px) {
+  /* header */
+  .header .header__nav {
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    padding: 10px;
+    gap: 1px;
+    align-items: center;
+    animation-range: 40px 100px;
+  }
+  .header .header__nav .nav__logo {
+    font-size: 1em;
+    width: 100vw;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 0;
+    animation-range: 40px 100px;
+  }
+  .header .header__nav .nav__list {
+    justify-content: space-evenly;
+    margin: auto;
+    animation: header-animation-nav both;
+    animation-timeline: scroll();
+    animation-range: 40px 100px;
+  }
+  .header .header__nav .nav__list .link {
+    font-size: 0.7em;
+    animation-range: 40px 100px;
+  }
+  /* main */
+  .container__main {
+    margin: auto;
+    font-size: 0.65em;
+    /* background */
+  }
+  .container__main .main__background {
+    background-image: url(imagenes/fondo_mobile.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    width: 100vw;
+    /* panel  */
+  }
+  .container__main .main__background .bg__panel {
+    width: 35vw;
+    top: 110px;
+    flex-direction: row;
+    margin: auto;
+  }
+  .container__main .main__background .bg__panel .div__panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: auto;
+  }
+  .container__main .main__background .bg__panel .div__panel .panel__select {
+    margin-bottom: 20px;
+  }
+  .container__main .main__background .bg__panel .div__panel .panel__button {
+    padding-top: 10px;
+  }
+  .container__main .main__section {
+    visibility: visible;
+    /* galeria */
+  }
+  .container__main .main__section h1 {
+    padding: 20px;
+  }
+  .container__main .main__section .section__galery {
+    width: 90vw;
+  }
+  .container__main .main__section .section__galery h2 {
+    font-size: 1.36em;
+  }
+  .container__main .main__section .section__galery .galery__articles {
+    justify-content: center;
+    gap: 6%;
+  }
+  .container__main .main__section .section__galery .galery__articles .article {
+    width: 280px;
+    height: 300px;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__figure {
+    width: 280px;
+    height: 220px;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__figure .imagen {
+    width: inherit;
+    height: inherit;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__figure:hover > .figure__capa {
+    visibility: hidden;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__figure:hover > .figure__capa h2 {
+    visibility: hidden;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__figure:hover > .imagen {
+    transform: scale(1);
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__info {
+    text-align: center;
+    width: 100%;
+    font-size: 1.2em;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__info .info-flex {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+  }
+  .container__main .main__section .section__galery .galery__articles .article .article__info .info-precio {
+    visibility: visible;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    font-size: 1.3em;
+    color: #135D66;
+  }
+  /* footer */
+  .footer {
+    flex-direction: column;
+    font-size: 0.7em;
+    align-items: center;
+  }
+  .footer .us {
+    width: auto;
+  }
+  .footer .info {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    padding: 20px;
+    padding-top: 40px;
+    width: auto;
+  }
+  /* contacto */
+  .container__contacto .contacto__bg {
+    background-image: url(imagenes/fondo_contacto_moble.png);
+    width: 90vw;
+    height: 112px;
+  }
+  .container__contacto .contacto__main {
+    flex-direction: column;
+  }
+  .container__contacto .contacto__main .image {
+    display: none;
+  }
+  .container__contacto .contacto__main .main__div {
+    margin: auto;
+  }
+  .container__contacto .contacto__main .main__div h2 {
+    padding: 0;
+    text-align: center;
+  }
+  .container__contacto .contacto__main .main__div .form {
+    align-items: center;
+  }
+  .container__contacto .contacto__main .main__div .form .input {
+    margin: 0;
+    width: 70vw;
+  }
+  /*buscador*/
+  .container__buscador {
+    margin: auto;
+    padding-top: 70px;
+    font-size: 0.65em;
+  }
+  .container__buscador .nav-toggle-label {
+    animation: label-animation both;
+    animation-timeline: scroll();
+    animation-range: 10px 200px;
+  }
+  .container__buscador .nav-toggle-label i {
+    display: block;
+  }
+  .container__buscador .buscador__nav {
+    transition: transform 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    width: 70vw;
+    height: 90%;
+    transform: translateX(-101%);
+    z-index: 600;
+    overflow: scroll;
+  }
+  .container__buscador .buscador__nav .nav__div .select {
+    height: 5vh;
+  }
+  .container__buscador .buscador__nav .div-buttom {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .container__buscador .buscador__nav .div-buttom .buttom {
+    padding: 10px 25px;
+  }
+  .container__buscador .nav-toggle:checked + .nav-toggle-label + .buscador__nav {
+    transform: translateX(-10%);
+  }
+  .container__buscador .nav-toggle-label {
+    display: block;
+  }
+  .container__buscador .buscador__main {
+    visibility: visible;
+    /* galeria */
+  }
+  .container__buscador .buscador__main .main__div {
+    visibility: visible;
+    width: 100%;
+    margin: 0;
+  }
+  .container__buscador .buscador__main .main__div .galery {
+    margin: auto;
+    width: 100%;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas {
+    justify-content: start;
+    gap: 6%;
+    margin: 0;
+    width: 83vw;
+    padding: 0;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article {
+    width: 270px;
+    height: 300px;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure {
+    width: 270px;
+    height: 200px;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure .imagen {
+    width: inherit;
+    height: inherit;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure:hover > .figure__capa {
+    visibility: hidden;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure:hover > .figure__capa h2 {
+    visibility: hidden;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__figure:hover > .imagen {
+    transform: scale(1);
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info {
+    text-align: center;
+    width: 100%;
+    height: 22vh;
+    font-size: 1.2em;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info .info-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: auto;
+    column-gap: 12vw;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__casas .article .article__info .info-precio {
+    visibility: visible;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    font-size: 1.3em;
+    color: #135D66;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__inversion {
+    gap: 5vh;
+    width: 100%;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion {
+    width: 100%;
+    height: 50vh;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .article__info-inversion {
+    display: none;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .figure-inversion {
+    width: 80vw;
+    height: 50vh;
+  }
+  .container__buscador .buscador__main .main__div .galery .galery__inversion .article-inversion .figure-inversion .imagen {
+    width: 98%;
+    height: 80%;
+  }
+  /* animaciones */
+  /*header*/
+  @keyframes header-animation {
+    100% {
+      padding: 0;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.896);
+      gap: 0;
+    }
+  }
+  @keyframes header-animation-nav {
+    to {
+      padding: 0;
+    }
+  }
+  @keyframes header-animation-links {
+    from {
+      color: black;
+    }
+    to {
+      color: #135D66;
+      font-size: 0.6em;
+    }
+  }
+  @keyframes header-animation-logo {
+    from {
+      color: black;
+      font-size: 1.7em;
+    }
+    to {
+      color: #135D66;
+      font-size: 1.3em;
+      padding-top: 5px;
+    }
+  }
+  @keyframes label-animation {
+    from {
+      margin-top: 20px;
+    }
+    to {
+      margin-top: 5px;
+    }
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

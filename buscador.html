@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encuentra alquiler o comprar una casa en nuestra inmobiliaria. Ofrecemos una amplia variedad de propiedades. Contacta con nuestros agentes inmobiliarios para más información.">
+    <meta name="keywords" content="inmobiliaria, venta de casas, alquiler de apartamentos, propiedades en venta, propiedades en alquiler, compra de viviendas, inmuebles, agente inmobiliario, apartamentos en venta, San Bernardo, Mar de Ajó, Costa Azul">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav    class="header__nav">
+            <a href="index.html" class="nav__logo"  >Larrolli</a>
+            <ul  class="nav__list">
+                <a href="index.html" class="link"  >Inicio</a>
+                <a href="contacto.html" class="link" >Contacto</a>
+                <a href="#footer" class="link" >Nosotros</a>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+        <div    class="container__buscador">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <i class="fas fa-bars"></i>
+            </label>
+            <!-- NAV -->
+            <nav    class="buscador__nav">
+                <!-- Operaciones -->
+                <h3     class="nav__titulo">Operaciones</h3>
+                <div    class="nav__div">
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Venta</label>
+                    </div>
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Alquiler</label>
+                    </div>
+                </div>
+                <!-- Tipo de propiedad -->
+                <h3     class="nav__titulo">Tipo de propiedad</h3>
+                <div    class="nav__div">
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Casas</label>
+                    </div>
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Cabañas</label>
+                    </div>
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Chalets</label>
+                    </div>
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Departamentos</label>
+                    </div>
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Duplex/Triplex</label>
+                    </div>
+                    <div    class="div__opcion">
+                        <input type="checkbox">
+                        <label>Proyectos</label>
+                    </div>
+                </div>
+                <!-- Precio -->
+                <h3     class="nav__titulo">Precio</h3>
+                <div    class="nav__div nav__div-precio">
+                    <div    class="div__opcion opcion-number">
+                        <label>Min.</label>
+                        <input type="number">
+                    </div>
+                    <div    class="div__opcion opcion-number">
+                        <label>Max</label>
+                        <input type="number">
+                    </div>
+                </div>
+                <!-- Otros  -->
+                <h3     class="nav__titulo">Otros</h3>
+                <div    class="nav__div">
+                    <select class="select">
+                        <option>Hambientes</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <select class="select">
+                        <option>Localidad</option>
+                        <option>Localidad1</option>
+                        <option>Localidad2</option>
+                        <option>Localidad3</option>
+                    </select>
+                </div>
+                <div    class=" div-buttom">
+                    <a href="buscador.html"     class="buttom">Aplicar</a>
+                </div>
+            </nav>
+            <!-- FIN NAV -->
+
+            <!-- INICIO GALERIA DE OPCIONES -->
+            <div    class="buscador__main">
+
+                <div    class="main__div">
+
+                    <h2 > Busqueda seleccionada </h2>
+
+                    <div    class="galery"> 
+                        <div    class="galery__casas">
+                            <div    class="article">
+                                <figure class="article__figure">
+                                    <img src="css/imagenes/Casas/casa1.jpg" class="imagen" alt="Departamento, Mar de ajo">
+                                    <div    class="figure__capa">
+                                        <h2>U$D35.000</h2>
+                                    </div>
+                                </figure>
+                                <div class="article__info">
+                                    <h4 class="info-inicio">Departamento: Mar de Ajó</h4>
+                                    <div class="info-flex">
+                                        <h3>Ambientes: 3</h3>
+                                        <h3>Baños: 1</h3>
+                                        <h3>Habitaciones: 1</h3>
+                                    </div>
+                                    <h3 class="info-precio">U$D35.000</h3>
+                                </div>
+                            </div>
+                            <div    class="article">
+                                <figure class="article__figure">
+                                    <img src="css/imagenes/Casas/casa2.jpg" class="imagen" alt="Casa, San Bernardo">
+                                    <div    class="figure__capa">
+                                        <h2>U$D56.000</h2>
+                                    </div>
+                                </figure>
+                                <div class="article__info">
+                                    <h4 class="info-inicio">Casa: San Bernardo</h4>
+                                    <div class="info-flex">
+                                        <h3>Ambientes: 5</h3>
+                                        <h3>Baños: 2</h3>
+                                        <h3>Habitaciones: 2</h3>
+                                    </div>
+                                    <h3 class="info-precio">U$D56.000</h3>
+                                </div>
+                            </div>
+                            <div    class="article">             
+                                <figure class="article__figure">
+                                    <img src="css/imagenes/Casas/casa3.jpg" class="imagen" alt="Departamento, Costa Azul">
+                                    <div    class="figure__capa">
+                                        <h2>U$D41.000</h2>
+                                    </div>
+                                </figure>
+                                <div class="article__info">
+                                    <h4 class="info-inicio">Departamento: Costa Azul</h4>
+                                    <div class="info-flex">
+                                        <h3>Ambientes: 4</h3>
+                                        <h3>Baños: 1</h3>
+                                        <h3>Habitaciones: 2</h3>
+                                    </div>
+                                    <h3 class="info-precio">U$D 41.000</h3>
+                                </div>
+                            </div>
+                            <div    class="article">            
+                                <figure class="article__figure">
+                                    <img src="css/imagenes/Casas/casa4.jpg" class="imagen" alt="Chalet, Costa Azul">
+                                    <div    class="figure__capa">
+                                        <h2>U$D43.000</h2>
+                                    </div>
+                                </figure>
+                                <div class="article__info">
+                                    <h4 class="info-inicio">Chalet: Costa Azul</h4>
+                                    <div class="info-flex">
+                                        <h3>Ambientes: 5</h3>
+                                        <h3>Baños: 2</h3>
+                                        <h3>Habitaciones: 2</h3>
+                                    </div>
+                                    <h3 class="info-precio"> U$D 43.500</h3>
+                                </div>
+                            </div>
+                            <div    class="article">
+                                <figure class="article__figure">
+                                    <img src="css/imagenes/Casas/casa5.jpg" class="imagen" alt="Departamento, Mar de Ajó">
+                                    <div    class="figure__capa">
+                                        <h2>U$D29.400</h2>
+                                    </div>
+                                </figure>
+                                <div class="article__info">
+                                    <h4 class="info-inicio">Departamento: Mar de Ajó</h4>
+    
+                                    <div class="info-flex">
+                                        <h3>Ambientes: 1</h3>
+                                        <h3>Baños: 1</h3>
+                                        <h3>Habitaciones: 1</h3>
+                                    </div>
+                                    <h3 class="info-precio">U$D 29.400</h3>
+                                </div>
+                            </div>
+                            <div    class="article">
+                                <figure class="article__figure">
+                                    <img src="css/imagenes/Casas/casa6.jpg" class="imagen" alt="Departamento, Mar de Ajó">
+                                    <div    class="figure__capa">
+                                        <h2>U$D48.000</h2>
+                                    </div>
+                                </figure>
+                                <div class="article__info">
+                                    <h4 class="info-inicio">Departamento: Mar de Ajó</h4>
+                                    <div class="info-flex">
+                                        <h3>Ambientes: 4</h3>
+                                        <h3>Baños: 1</h3>
+                                        <h3>Habitaciones: 2</h3>
+                                    </div>
+                                    <h3 class="info-precio">U$D 48.000</h3>
+                                </div>
+                            </div> 
+                        </div>
+                        
+                        <h2> Para inversionistas </h2>
+
+                        <div    class="galery__inversion">
+                            <div    class="article article-inversion">
+                                <div class="article__info-inversion">
+                                    <h3>Ambientes:4</h3>
+                                    <h3>Localidad: San Bernardo</h3>
+                                    <h2 class="precio"> U$D 1234</h2>
+                                </div>
+                                <figure class="article__figure figure-inversion">
+                                    <img src="css/imagenes/Casas/inversion1.jpg" class="imagen">
+                                </figure>
+                            </div>
+                            <div    class="article article-inversion">
+                                <div class="article__info-inversion">
+                                    <h3>Ambientes:4</h3>
+                                    <h3>Localidad: San Bernardo</h3>
+                                    <h2 class="precio"> U$D 1234</h2>
+                                </div>
+                                <figure class="article__figure figure-inversion">
+                                    <img src="css/imagenes/Casas/inversion2.jpg" class="imagen">
+                                </figure>
+                            </div>
+                            <div    class="article article-inversion">
+                                <div class="article__info-inversion">
+                                    <h3>Ambientes:4</h3>
+                                    <h3>Localidad: San Bernardo</h3>
+                                    <h2 class="precio"> U$D 1234</h2>
+                                </div>
+                                <figure class="article__figure figure-inversion">
+                                    <img src="css/imagenes/Casas/inversion4.jpg" class="imagen">
+                                </figure>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div    class="footer">
+            <div    class="us" id="nosotros">
+                <h3>Nosotros: Larolli propiedades & otros™ </h3>
+                <h3>Direccion: T: III - F: 744 - Nº1402</h3>
+                <h3>mail: propiedades-lc@larrolli.com</h3>
+                <h3>Telefono: +54-9-2258283812</h3>
+            </div>
+            <p      class="info">
+                Somos una Empresa conformada por un Staff de Jóvenes Profesionales, quienes se capacitan permanentemente con el objetivo de estar al pie de la vanguardia, que el avance tanto social como tecnológico lo requieren en la actualidad..®
+            </p>
+        </div>
+    </footer>
+    
+</body>
+</html>
